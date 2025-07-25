@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOVAIRE AGENCY</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: #111;
+      color: #eee;
+    }
+    a {
+      text-decoration: none;
+    }
+
+    /* Hero */
+    header {
+      position: relative;
+      height: 90vh;
+      background: url('https://source.unsplash.com/1600x900/?stage,spotlight') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+    header h1, header p, header nav {
+      position: relative;
+      z-index: 1;
+      animation: fadeInUp 1.2s ease-out forwards;
+      opacity: 0;
+    }
+    header h1 {
+      font-size: 4rem;
+      color: #fff;
+      margin-bottom: 1rem;
+      animation-delay: 0.4s;
+    }
+    header p {
+      font-size: 1.3rem;
+      color: #ff2e3b;
+      margin-bottom: 2rem;
+      animation-delay: 0.8s;
+    }
+    header nav a {
+      margin: 0 1rem;
+      padding: 0.8rem 2rem;
+      background: #ff2e3b;
+      color: #111;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      animation-delay: 1.2s;
+    }
+    header nav a:hover {
+      background: #e02434;
+      transform: scale(1.05);
+    }
+
+    section {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+    section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    section p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: #1a1a1a;
+      padding: 2rem;
+      border-left: 4px solid #ff2e3b;
+      border-radius: 10px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .card h3 {
+      color: #ff2e3b;
+      margin-bottom: 1rem;
+    }
+
+    /* Star Creators */
+    .creator-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .creator-card {
+      background: #1a1a1a;
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      border: 1px solid #2a2a2a;
+    }
+    .creator-card:hover {
+      transform: translateY(-6px);
+    }
+    .creator-img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      border: 2px solid #ff2e3b;
+    }
+    .creator-card h3 {
+      color: #ff2e3b;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    .creator-card p {
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+
+    #join nav a {
+      margin: 0 1rem;
+      padding: 1rem 2rem;
+      background: #ff2e3b;
+      color: #111;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    #join nav a:hover {
+      background: #e02434;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #000;
+      color: #888;
+      padding: 3rem 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #ff2e3b;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.5rem; }
+      header p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>NOVAIRE AGENCY</h1>
+    <p>We Launch Stars. You Become One.</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#creators">Creators</a>
+      <a href="#join">Join</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About NOVAIRE</h2>
+    <p>NOVAIRE는 TikTok LIVE 크리에이터의 브랜드화를 선도하는 글로벌 에이전시입니다.  
+    단순한 소속이 아닌, 궤도를 함께 설계하는 파트너입니다.</p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="features">
+      <div class="card"><h3>📡 LIVE Management</h3><p>라이브 콘텐츠 기획, 실시간 노출 전략, 성장 알고리즘 분석까지 전방위 지원</p></div>
+      <div class="card"><h3>🎯 Branding & IP</h3><p>퍼스널 브랜드 전략, 팬덤 구축, 커머스 확장까지</p></div>
+      <div class="card"><h3>💰 Revenue & Tax</h3><p>정산 리포트 제공과 세무 대응까지 안정적인 수익 시스템 구축</p></div>
+      <div class="card"><h3>🌍 Global Expansion</h3><p>아시아 주요국 파트너와 협업한 국제 무대 진출 지원</p></div>
+    </div>
+  </section>
+
+  <section id="creators">
+    <h2>Star Creators</h2>
+    <p>NOVAIRE와 함께 성장한 대표 크리에이터들을 소개합니다.</p>
+    <div class="creator-container">
+      <div class="creator-card">
+        <img src="https://source.unsplash.com/300x300/?woman,face" alt="sunny" class="creator-img">
+        <h3>@sunny_94</h3>
+        <p>뷰티/라이프 전문 라이브 호스트. 팬덤 3만+ 크리에이터</p>
+      </div>
+      <div class="creator-card">
+        <img src="https://source.unsplash.com/300x300/?man,profile" alt="hyun" class="creator-img">
+        <h3>@hyunverse</h3>
+        <p>음악 기반 틱톡 콘텐츠 크리에이터. 글로벌 팬층 보유</p>
+      </div>
+      <div class="creator-card">
+        <img src="https://source.unsplash.com/300x300/?japan,fashion" alt="luna" class="creator-img">
+        <h3>@luna.japan</h3>
+        <p>일본향 주얼리/패션 콘텐츠 진행. 일본 TikTok 진출 1위</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="join">
+    <h2>Join NOVAIRE</h2>
+    <p>TikTok LIVE를 시작했거나 성장하고 싶은 크리에이터라면  
+    누구든지 NOVAIRE와 함께할 수 있습니다. 1:1 컨설팅, 정산, 교육을 모두 지원합니다.</p>
+    <nav>
+      <a href="mailto:contact@novaire.agency">가입 문의</a>
+      <a href="#">제안서 요청</a>
+    </nav>
+  </section>
+
+  <footer>
+    NOVAIRE AGENCY ⎜ 크리에이터의 궤도를 설계하는 사람들<br>
+    📧 <a href="mailto:contact@novaire.agency">contact@novaire.agency</a> ⎜ ©2025 NOVAIRE
+  </footer>
+
+  <script>
+    // 스크롤시 card 등장 애니메이션
+    const cards = document.querySelectorAll('.card');
+    const showCards = () => {
+      cards.forEach(card => {
+        const top = card.getBoundingClientRect().top;
+        const trigger = window.innerHeight - 100;
+        if (top < trigger) {
+          card.classList.add('show');
+        }
+      });
+    };
+    window.addEventListener('scroll', showCards);
+    window.addEventListener('load', showCards);
+  </script>
+
+</body>
+</html>
